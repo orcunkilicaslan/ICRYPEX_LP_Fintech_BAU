@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <title>ICRYPEX</title>
+    <meta charset="utf-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+    <meta name="viewport" content="width=820">
+    <link rel="shortcut icon" href="../assets/img/icons/favicon.ico" type="image/x-icon" sizes="32x32" />
+    <link id="css-custom-app" rel="stylesheet" href="../assets/dist/css/custom-app.css">
+    <script id="script-jquery" src="../assets/cdn/jquery/jquery.3.5.1.min.js"></script>
+    <script id="script-popper" src="../assets/cdn/popper/popper.1.16.1.min.js"></script>
+    <script id="script-bootstrap" src="../assets/cdn/bootstrap/bootstrap.4.5.2.min.js"></script>
+</head>
+<body>
+
+<!-- Header Start -->
+<header class="header">
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Head Left -->
+            <div class="header-left col-3"></div>
+            <!-- Head Left -->
+
+            <!-- Head Center -->
+            <div class="header-center col">
+                <a class="headlogo" href="Home_Page.html">
+                    <img src="../assets/img/header/header_logo_icrypex.svg" alt="ICRYPEX" />
+                    <img src="../assets/img/header/header_logo_bau.svg" alt="BAU" />
+                </a>
+            </div>
+            <!-- Head Center -->
+
+            <!-- Head Right -->
+            <div class="header-right col-3">
+                <div class="headbtns">
+                    <a href="Home_Page.html" class="btn btn-sm btn-info smoothscroll" title="Başvuru Yap" rel="category" data-target="#SecForm">Başvuru Yap</a>
+                </div>
+            </div>
+            <!-- Head Right -->
+
+        </div>
+    </div>
+</header>
+<!-- Header End -->
+
+<!-- Head Title Start -->
+<section class="headtitle headtitle-fintech">
+    <div class="headfintech">
+        <div class="container">
+            <div class="contentarea">
+                <div class="contentarea-slogan">
+                    <h1>ICRYPEX FINTECH YÜKSEK LİSANS PROGRAMI BAŞLIYOR!</h1>
+                    <p>Finansal hizmetlere erişim teknoloji ile daha kolay!</p>
+                    <p>Yeni finans dünyasına daha iyi, daha hızlı ve daha kolay hazırlanmak için programımız sizi bekliyor!</p>
+                </div>
+                <div class="contentarea-countdown">
+                    <h6>Kalan Süre</h6>
+                    <div id="countdownArea" class="countdown row no-gutters">
+                        <div class="countdown-box col-auto">
+                            <strong id="countDays" class="countdata">00</strong>
+                            <span class="counttext">Gün</span>
+                        </div>
+                        <div class="countdown-box col-auto">
+                            <strong id="countHours" class="countdata">00</strong>
+                            <span class="counttext">Saat</span>
+                        </div>
+                        <div class="countdown-box col-auto">
+                            <strong id="countMinutes" class="countdata">00</strong>
+                            <span class="counttext">Dakika</span>
+                        </div>
+                        <div class="countdown-box col-auto">
+                            <strong id="countSeconds" class="countdata">00</strong>
+                            <span class="counttext">Saniye</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded',()=>{
+
+        // Set the date we're counting down to
+        var countDownDate = new Date("February 14, 2021 23:59:59").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var countDays = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var countHours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var countMinutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var countSeconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            document.getElementById("countDays").innerHTML = countDays;
+            document.getElementById("countHours").innerHTML = countHours;
+            document.getElementById("countMinutes").innerHTML = countMinutes;
+            document.getElementById("countSeconds").innerHTML = countSeconds;
+
+
+            // If the count down is over, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdownArea").style.opacity = "1";
+                document.getElementById("countdownArea").innerHTML = "<p>SÜRESİ DOLDU</p>";
+            } else {
+                document.getElementById("countdownArea").style.opacity = "1";
+            }
+        }, 0);
+
+
+    });
+</script>
+<!-- Head Title End -->
+
+<!-- Form Result Start -->
+<section class="component-formresult">
+    <div class="container">
+
+        <!-- Title -->
+        <div class="sitetitle sitetitle-xl sitetitle-dark sitetitle-center">
+            <h2>Kayıt İşlemi Başarısız.</h2>
+            <p>Lütfen bilgilerinizi kontrol edin.</p>
+            <div class="resulticons error"></div>
+        </div>
+        <!-- Title -->
+
+    </div>
+</section>
+<!-- Form Result End -->
+
+<!-- Component Scholarship Start -->
+<section class="component-scholarship">
+    <div class="container">
+
+        <!-- Title -->
+        <div class="sitetitle sitetitle-xl sitetitle-soft sitetitle-center sitetitle-width700">
+            <h3>Toplamda 4 Öğrenciye %50 BURS</h3>
+            <p>Yapılan başvurular incelenip akademik kriterlere uygun olan iki Türk, iki yabancı olmak üzere dört öğrencimize ICRYPEX tarafından %50 burs sağlanacaktır. Bursiyerler, Bahçeşehir Üniversitesi tarafından Yüksek Lisans programına başvuran adaylarda aranan genel asgari koşulları sağlamakla yükümlüdürler.</p>
+            <p><a class="sitecolorwhite" href="#">Burs olanaklarının detaylı bilgisi için tıklayınız.</a></p>
+        </div>
+        <!-- Title -->
+
+    </div>
+</section>
+<!-- Component Scholarship End -->
+
+<!-- Component Jury Start -->
+<section class="component-jury">
+    <div class="container">
+
+        <!-- Title -->
+        <div class="sitetitle sitetitle-xl sitetitle-dark sitetitle-left">
+            <h3>Akademik Kadro</h3>
+            <p>Bahçeşehir Üniversitesi eğitmen kadrosuyla çıktığımız bu yolda, ders içi teorik bilgilerimize; sektörde çalışan yerli ve yabancı kişilerin mevcut gelişmeleri öğrencilerimizle paylaşmalarına ve finansal teknolojinin geleceğine güveniyoruz.</p>
+        </div>
+        <!-- Title -->
+
+        <!-- Awards -->
+        <ul class="jurylist">
+            <li>
+                <img class="jurylist-avatar" src="../assets/img/section/component_jurylist_avatar_01.jpg" />
+                <h5 class="jurylist-title">Lorem Ipsum</h5>
+                <p class="jurylist-desc">Lorem ipsum dolor sit amet, consectetur</p>
+            </li>
+            <li>
+                <img class="jurylist-avatar" src="../assets/img/section/component_jurylist_avatar_02.jpg" />
+                <h5 class="jurylist-title">Lorem Ipsum</h5>
+                <p class="jurylist-desc">Lorem ipsum dolor sit amet, consectetur</p>
+            </li>
+            <li>
+                <img class="jurylist-avatar" src="../assets/img/section/component_jurylist_avatar_03.jpg" />
+                <h5 class="jurylist-title">Lorem Ipsum</h5>
+                <p class="jurylist-desc">Lorem ipsum dolor sit amet, consectetur</p>
+            </li>
+            <li>
+                <img class="jurylist-avatar" src="../assets/img/section/component_jurylist_avatar_04.jpg" />
+                <h5 class="jurylist-title">Lorem Ipsum</h5>
+                <p class="jurylist-desc">Lorem ipsum dolor sit amet, consectetur</p>
+            </li>
+        </ul>
+        <!-- Awards -->
+
+    </div>
+</section>
+<!-- Component Jury End -->
+
+<!-- Footer Start -->
+<footer class="footer">
+    <div class="container">
+
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <div class="footlogo">
+                <img src="../assets/img/footer/footer_logo_icrypex.svg" alt="ICRYPEX" />
+                <img src="../assets/img/footer/footer_logo_bau.svg" alt="BAU" />
+            </div>
+            <div class="footcopy">
+                <p>Tüm Hakları Saklıdır</p>
+                <p>© 2018-2021 Icrypex Crypto Exchange</p>
+            </div>
+        </div>
+        <!-- Copyright -->
+
+        <!-- Address -->
+        <div class="footer-address">
+            <div class="footaddr">
+                <p>Icrypex Bilişim A.Ş. Maslak Mah. Maslak Meydan Sok. Spring Giz Plaza N:5/57 34398 Sarıyer/İstanbul</p>
+            </div>
+            <div class="footcallcenter">
+                <p>0850 2501079</p>
+                <a href="mailto:info@icrypex.com">info@icrypex.com</a>
+            </div>
+            <div class="footsocial">
+                <ul class="sociallist">
+                    <li><a href="https://facebook.com/icrypex/" data-toggle="tooltip" data-placement="bottom" title="Facebook'ta Takip Edin" rel="external nofollow" target="_blank"><i class="socialicon facebook"></i></a></li>
+                    <li><a href="https://twitter.com/icrypex" data-toggle="tooltip" data-placement="bottom" title="Twitter'da Takip Edin" rel="external nofollow" target="_blank"><i class="socialicon twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/icrypex/" data-toggle="tooltip" data-placement="bottom" title="Instagram'da Takip Edin" rel="external nofollow" target="_blank"><i class="socialicon instagram"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UC1GYP4S6zxbI9FdobqTTcHQ" data-toggle="tooltip" data-placement="bottom" title="Youtube Kanalına Abone Olun" rel="external nofollow" target="_blank"><i class="socialicon youtube"></i></a></li>
+                    <li><a href="https://t.me/icrypex_tr" data-toggle="tooltip" data-placement="bottom" title="Telegram Grubumuza Katılın" rel="external nofollow" target="_blank"><i class="socialicon telegram"></i></a></li>
+                    <li><a href="https://medium.com/icrypex" data-toggle="tooltip" data-placement="bottom" title="Medium'da Takip Edin" rel="external nofollow" target="_blank"><i class="socialicon medium"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/icrypex-crypto-exchange/" data-toggle="tooltip" data-placement="bottom" title="Linkedin'de Takip Edin" rel="external nofollow" target="_blank"><i class="socialicon linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Address -->
+
+    </div>
+</footer>
+<!-- Footer End -->
+
+<!-- JavaScript Start -->
+<script src="../assets/vendor/dropzone/dist/dropzone.js"></script>
+<script src="../assets/vendor/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+<script id="script-custom-app" src="../assets/dist/js/custom-app.js"></script>
+<!-- JavaScript End -->
+
+</body>
+</html>

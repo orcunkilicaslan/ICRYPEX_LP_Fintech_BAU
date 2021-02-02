@@ -1,0 +1,8 @@
+.btn{
+  white-space: nowrap;
+
+  &:focus{@include box-shadow(none !important);}
+  &:hover{@include box-shadow(none !important);}
+  &:not(:disabled):not(.disabled).active:focus,
+  &:not(:disabled):not(.disabled):active:focus{@include box-shadow(none !important);}
+}

@@ -1,0 +1,99 @@
+.section{
+
+  &-cont{
+    padding: 80px 0 100px;
+
+    @include BootstrapMaxWidthResponsive(hd){
+      padding: 50px 0 70px;
+    }
+    @include BootstrapMaxWidthResponsive(xl){
+      padding: 40px 0 50px;
+    }
+  }
+
+}
+
+ul.ullist{
+
+  li{
+    position: relative;
+    padding-left: 15px;
+
+    &::before{
+      content: "";
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      left: 0;
+    }
+  }
+
+  p{
+    padding-left: 15px;
+  }
+
+  &-dotted{
+    li{
+      &::before{
+        width: 8px;
+        height: 8px;
+        background-color: $site-clr-green;
+        top: 8px;
+        left: 0;
+        @include border-radius(50%);
+
+        @include BootstrapMaxWidthResponsive(1k){
+          top: 6px;
+        }
+        @include BootstrapMaxWidthResponsive(lg){
+          top: 5px;
+        }
+      }
+    }
+  }
+}
+
+ol.olbulletmark{
+  counter-reset: item;
+
+  > li{
+    padding-left: 40px;
+    position: relative;
+
+    &::before {
+      content: counters(item, ".") " ";
+      counter-increment: item;
+      font-weight: $var-custom-font-weight-bold;
+      text-align: right;
+      width: 15px;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+    }
+
+    &::after{
+      content: "";
+      background-color: $site-clr-cyan;
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      left: 25px;
+      top: 13px;
+      @include border-radius(50%);
+    }
+
+    > ol{
+      margin-left: 15px;
+      list-style-type: lower-alpha;
+
+      > li{
+        padding-left: 0;
+
+        &::marker{
+          font-weight: $var-custom-font-weight-bold;
+        }
+      }
+    }
+  }
+}

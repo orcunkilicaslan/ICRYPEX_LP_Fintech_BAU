@@ -1,0 +1,43 @@
+
+.header{
+  width: 100%;
+  background-color: transparentize(#112135, 0.1);
+  padding: 11px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  @include box-shadow(0 0 0 0 transparent);
+  @include transition-multiple(background 0.15s ease-in-out, padding 0.15s ease-in-out, box-shadow 0.15s ease-in-out);
+
+  > div[class*="container"] > .row{
+    @include flexbox-align-items(center);
+  }
+
+  &-left{}
+
+  &-right{
+    .headbtns{
+      text-align: right;
+    }
+  }
+
+  &-center{
+    @include flexbox-display-flex();
+    @include flexbox-align-items(center);
+    @include flexbox-justify-content(center);
+
+    .headlogo{
+      @include flexbox-display-flex();
+      @include flexbox-align-items(center);
+      @include flexbox-justify-content(center);
+
+      > *{margin: 0 10px;}
+    }
+  }
+
+  &.headscroll{
+    background-color: transparentize(#112135, 0.02);
+    padding: 8px 0;
+  }
+}

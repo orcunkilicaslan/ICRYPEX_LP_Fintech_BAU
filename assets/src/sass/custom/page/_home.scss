@@ -1,0 +1,32 @@
+
+.home{
+
+  &-welcome{
+    padding-top: 80px;
+
+    @include BootstrapMaxWidthResponsive(hd){
+      padding-top: 50px;
+    }
+    @include BootstrapMaxWidthResponsive(xl){
+      padding-top: 40px;
+    }
+
+    .sitetitle-xl{
+      @include BootstrapMaxWidthResponsive(lg){
+        text-align: center;
+      }
+    }
+
+    .buttonsarea{
+      @include flexbox-display-flex();
+      @include flexbox-justify-content(center);
+      margin-top: 20px;
+
+      .btn{
+        margin: 10px 5px 0;
+        min-width: 200px;
+      }
+    }
+  }
+
+}

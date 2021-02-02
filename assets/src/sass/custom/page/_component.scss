@@ -1,0 +1,296 @@
+
+.component{
+
+  &-formbox{
+    padding: 80px 0;
+
+    @include BootstrapMaxWidthResponsive(hd){
+      padding: 50px 0;
+    }
+    @include BootstrapMaxWidthResponsive(xl){
+      padding: 40px 0;
+    }
+
+    .sitetitle-xl{
+      margin-bottom: 15px;
+
+      @include BootstrapMaxWidthResponsive(hd){
+        margin-bottom: 10px;
+      }
+      @include BootstrapMaxWidthResponsive(lg){
+        text-align: center;
+      }
+    }
+
+    .formbox{
+
+      &-form{}
+
+      &-stepbox{
+        background-color: #edf1f5;
+        min-height: 400px;
+        padding: 30px;
+        @include border-radius(6px);
+
+        @include BootstrapMaxWidthResponsive(hd){
+          padding: 25px;
+        }
+
+        .fieldsets{
+          width: 100%;
+          margin-bottom: 40px;
+
+          &:last-child{margin-bottom: 0;}
+
+          &-title{
+            @include responsive-font-size(1.25rem);
+            margin-bottom: 15px;
+          }
+
+          &-row{
+
+            .useravatar{
+              width: 260px;
+              padding-top: 24px;
+
+              .dropzone{
+                height: 253px;
+              }
+            }
+          }
+
+          &-forms{
+
+            > .form-row{
+              margin-bottom: 20px;
+
+              @include BootstrapMaxWidthResponsive(hd){
+                margin-bottom: 15px;
+              }
+              @include BootstrapMaxWidthResponsive(lg){
+                margin-bottom: 0;
+              }
+
+              &:last-child{
+                margin-bottom: 0;
+
+                @include BootstrapMaxWidthResponsive(lg){
+                  .form-group:last-child{margin-bottom: 0;}
+                }
+              }
+
+              .form-group{
+                @include BootstrapMaxWidthResponsive(lg){
+                  margin-bottom: 15px;
+                }
+              }
+            }
+
+            .custom-control{
+
+              label{
+                opacity: 0.8;
+                font-weight: $var-custom-font-weight-normal;
+              }
+              input[type="radio"]:checked+label{
+                opacity: 1;
+                font-weight: $var-custom-font-weight-bold;
+              }
+            }
+
+            .custom-file-lg{
+              height: 50px;
+
+              .custom-file-input,
+              .custom-file-label,
+              .custom-file-label::after{
+                height: 100%;
+                line-height: 2.1;
+                margin: 0;
+              }
+            }
+
+            .form-row{
+              .fielderror{
+                .form-control, .custom-select, .custom-file-label{color: $site-clr-red; border-color: $site-clr-red;}
+                @include placeholder{color: $site-clr-red;}
+
+                .checkboxarea .custom-control-label{color: $site-clr-red;}
+              }
+              .fieldsuccess{
+                .form-control, .custom-select, .custom-file-label{color: $site-clr-cyan; border-color: $site-clr-cyan;}
+                @include placeholder{color: $site-clr-cyan;}
+
+                .checkboxarea .custom-control-label{color: $site-clr-cyan;}
+              }
+            }
+          }
+
+          &-actions{
+            @include flexbox-display-flex();
+            @include flexbox-flex-wrap(wrap);
+            @include flexbox-justify-content(center);
+            margin-top: 20px;
+
+            > .btn{
+              @include flexbox-flex(0 0 auto);
+              max-width: 100%;
+              min-width: 180px;
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+  &-formresult{
+    padding: 80px 0;
+
+    @include BootstrapMaxWidthResponsive(hd){
+      padding: 60px 0;
+    }
+    @include BootstrapMaxWidthResponsive(xl){
+      padding: 40px 0;
+    }
+
+    .sitetitle-xl{
+
+      .resulticons{
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 340px;
+        height: 320px;
+        display: block;
+        margin: 20px auto 0;
+        position: relative;
+
+        @include BootstrapMaxWidthResponsive(hd){
+          width: 300px;
+          height: 280px;
+        }
+        @include BootstrapMaxWidthResponsive(lg){
+          width: 240px;
+          height: 225px;
+        }
+
+        &.success{background-image: url(#{$path-img-url-icons}/form_result_icon_success.svg#{$cache-busting});}
+        &.error{background-image: url(#{$path-img-url-icons}/form_result_icon_error.svg#{$cache-busting});}
+      }
+    }
+  }
+
+  &-scholarship{
+    @include flexbox-flex(0);
+    background-color: #31b3e7;
+    background-image: url(#{$path-img-url}/section/component_scholarship_bg.jpg#{$cache-busting});
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+    padding: 80px 0;
+    min-height: 600px;
+    position: relative;
+
+    &::before{
+      content: "";
+      @include background-linear(transparent, transparentize(#112135, 0.1), 90, 0%, 100%);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    @include BootstrapMaxWidthResponsive(hd){
+      padding: 60px 0;
+    }
+
+    .sitetitle-xl{
+      margin-bottom: 60px;
+      position: relative;
+
+      @include BootstrapMaxWidthResponsive(hd){
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &-jury{
+    @include flexbox-flex(0);
+    padding: 80px 0;
+
+    @include BootstrapMaxWidthResponsive(hd){
+      padding: 60px 0;
+    }
+    @include BootstrapMaxWidthResponsive(xl){
+      padding: 50px 0;
+    }
+
+    .sitetitle-xl{
+      margin-bottom: 60px;
+
+      @include BootstrapMaxWidthResponsive(hd){
+        margin-bottom: 40px;
+      }
+      @include BootstrapMaxWidthResponsive(lg){
+        text-align: center;
+      }
+    }
+
+    .jurylist{
+      @include flexbox-display-flex();
+      @include flexbox-flex-wrap(wrap);
+      text-align: center;
+
+      @include BootstrapMaxWidthResponsive(lg){
+        @include flexbox-justify-content(center);
+      }
+
+      > li{
+        @include flexbox-flex-basis(0);
+        @include flexbox-flex-grow(1);
+        max-width: 100%;
+        padding: 0 15px;
+
+        @include BootstrapMaxWidthResponsive(lg){
+          @include flexbox-flex(0 0 calc(100% / 3));
+          max-width: calc(100% / 3);
+          padding: 15px;
+        }
+      }
+
+      &-avatar{
+        width: 186px;
+        height: 186px;
+        margin: 0 auto 10px;
+        @include border-radius(50%);
+
+        @include BootstrapMaxWidthResponsive(hd){
+          width: 170px;
+          height: 170px;
+        }
+        @include BootstrapMaxWidthResponsive(xl){
+          width: 140px;
+          height: 140px;
+        }
+      }
+
+      &-title{
+        @include responsive-font-size(1.875rem);
+        display: block;
+
+        @include BootstrapMaxWidthResponsive(hd){
+          @include responsive-font-size(1.615rem);
+        }
+      }
+
+      &-desc{
+        @include responsive-font-size(1rem);
+        display: block;
+      }
+
+    }
+  }
+
+}
