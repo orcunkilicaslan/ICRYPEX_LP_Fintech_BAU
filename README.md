@@ -4,8 +4,6 @@
 - [Home_Page](https://orcunkilicaslan.github.io/ICRYPEX_LP_Fintech_BAU/html/Home_Page.html)
 - [Form_Result_Success](https://orcunkilicaslan.github.io/ICRYPEX_LP_Fintech_BAU/html/Form_Result_Success.html)
 - [Form_Result_Error](https://orcunkilicaslan.github.io/ICRYPEX_LP_Fintech_BAU/html/Form_Result_Error.html)
-- [About_Us](https://orcunkilicaslan.github.io/ICRYPEX_LP_Fintech_BAU/html/About_Us.html)
-- [Terms](https://orcunkilicaslan.github.io/ICRYPEX_LP_Fintech_BAU/html/Terms.html)
    
 
 # NodeJS Kurulumu
