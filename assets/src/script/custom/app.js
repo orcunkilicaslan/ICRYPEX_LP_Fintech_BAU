@@ -47,6 +47,17 @@ $(document).ready(function() {
                 $(this).parent().removeClass('fielderror').addClass('fieldsuccess');
             }
         });
+        fieldset.find('.emailrequired').each(function() {
+            var thisValue = $(this).val();
+            var emailReg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if( thisValue === "" ) {
+                $(this).parent().removeClass('fieldsuccess').addClass('fielderror');
+            } else if (!emailReg.test(thisValue)) {
+                $(this).parent().removeClass('fieldsuccess').addClass('fielderror');
+            } else {
+                $(this).parent().removeClass('fielderror').addClass('fieldsuccess');
+            }
+        });
         fieldset.find('.selectrequired').each(function() {
             var thisValue = $(this).val();
             if( thisValue === null ) {
@@ -80,6 +91,33 @@ $(document).ready(function() {
             $(this).parent().addClass("focus-input");
             $(this).parent().removeClass('fielderror').addClass('fieldsuccess');
         }
+    });
+
+    // Focus On Input Field Check Empty or Not
+    $(".emailrequired").on('focus', function(){
+
+        var tmpInputThis = $(this).val();
+        if( tmpInputThis === '' ) {
+            $(this).parent().addClass("focus-input");
+        } else if(tmpInputThis !== '' ){
+            $(this).parent().addClass("focus-input");
+        }
+
+    }).on('blur', function(){
+
+        var tmpInputThis = $(this).val();
+        var emailReg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if( tmpInputThis === '' ) {
+            $(this).parent().removeClass("focus-input");
+            $(this).parent().removeClass('fieldsuccess').addClass('fielderror');
+        } else if (!emailReg.test(tmpInputThis)) {
+            $(this).parent().removeClass("focus-input");
+            $(this).parent().removeClass('fieldsuccess').addClass('fielderror');
+        } else {
+            $(this).parent().addClass("focus-input");
+            $(this).parent().removeClass('fielderror').addClass('fieldsuccess');
+        }
+
     });
 
     // Focus On Select Field Check Empty or Not
@@ -142,5 +180,3 @@ $(document).ready(function(){
     });
 });
 /* Input Mask */
-
-

@@ -53,8 +53,16 @@
               width: 260px;
               padding-top: 24px;
 
+              @include BootstrapMaxWidthResponsive(lg){
+                width: 200px;
+              }
+
               .dropzone{
                 height: 253px;
+
+                @include BootstrapMaxWidthResponsive(lg){
+                  height: 200px;
+                }
               }
             }
           }
@@ -192,6 +200,10 @@
     min-height: 600px;
     position: relative;
 
+    @include BootstrapMaxWidthResponsive(lg){
+      min-height: 450px;
+    }
+
     &::before{
       content: "";
       @include background-linear(transparent, transparentize(#112135, 0.1), 90, 0%, 100%);
@@ -254,15 +266,15 @@
         padding: 0 15px;
 
         @include BootstrapMaxWidthResponsive(lg){
-          @include flexbox-flex(0 0 calc(100% / 3));
-          max-width: calc(100% / 3);
+          @include flexbox-flex(0 0 calc(100% / 2));
+          max-width: calc(100% / 2);
           padding: 15px;
         }
       }
 
       &-avatar{
-        width: 186px;
-        height: 186px;
+        width: 185px;
+        height: 185px;
         margin: 0 auto 10px;
         @include border-radius(50%);
 
@@ -277,17 +289,38 @@
       }
 
       &-title{
-        @include responsive-font-size(1.875rem);
+        @include responsive-font-size(1.5rem);
         display: block;
+        white-space: nowrap;
 
         @include BootstrapMaxWidthResponsive(hd){
-          @include responsive-font-size(1.615rem);
+          @include responsive-font-size(1.4rem);
         }
       }
 
       &-desc{
-        @include responsive-font-size(1rem);
+        @include responsive-font-size(1.25rem);
         display: block;
+        padding-top: 1rem;
+        margin-top: 1rem;
+        position: relative;
+
+        @include BootstrapMaxWidthResponsive(lg){
+          padding-top: 0.5rem;
+          margin-top: 0.5rem;
+        }
+
+        &::before{
+          content: "";
+          background-color: $site-clr-cyan;
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          @include translateY(-50%);
+          @include border-radius(50%);
+        }
       }
 
     }

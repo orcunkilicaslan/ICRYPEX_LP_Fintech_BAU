@@ -1,7 +1,7 @@
 # Frontend
 
 #### Web Public Area Frontend List
-- [Home_Page](https://orcunkilicaslan.github.io/ICRYPEX_LP_Fintech_BAU/html/Home_Page.html)
+- [Home_Page_TR](https://orcunkilicaslan.github.io/ICRYPEX_LP_Fintech_BAU/html/Home_Page_TR.html)
 - [Form_Result_Success](https://orcunkilicaslan.github.io/ICRYPEX_LP_Fintech_BAU/html/Form_Result_Success.html)
 - [Form_Result_Error](https://orcunkilicaslan.github.io/ICRYPEX_LP_Fintech_BAU/html/Form_Result_Error.html)
    

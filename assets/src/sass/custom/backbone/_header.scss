@@ -2,7 +2,7 @@
 .header{
   width: 100%;
   background-color: transparentize(#112135, 0.1);
-  padding: 11px 0;
+  padding: 5px 0;
   position: fixed;
   left: 0;
   top: 0;
@@ -14,9 +14,20 @@
     @include flexbox-align-items(center);
   }
 
-  &-left{}
+  &-left{
+    @include BootstrapMaxWidthResponsive(hd){
+      display: none;
+    }
+  }
 
   &-right{
+    @include flexbox-display-flex();
+    @include flexbox-justify-content(flex-end);
+
+    .headlang{
+      text-align: right;
+      margin-right: 10px;
+    }
     .headbtns{
       text-align: right;
     }
@@ -27,10 +38,18 @@
     @include flexbox-align-items(center);
     @include flexbox-justify-content(center);
 
+    @include BootstrapMaxWidthResponsive(hd){
+      @include flexbox-justify-content(flex-start);
+    }
+
     .headlogo{
       @include flexbox-display-flex();
       @include flexbox-align-items(center);
       @include flexbox-justify-content(center);
+
+      @include BootstrapMaxWidthResponsive(lg){
+        @include scale(0.75);
+      }
 
       > *{margin: 0 10px;}
     }
@@ -38,6 +57,6 @@
 
   &.headscroll{
     background-color: transparentize(#112135, 0.02);
-    padding: 8px 0;
+    padding: 2px 0;
   }
 }
