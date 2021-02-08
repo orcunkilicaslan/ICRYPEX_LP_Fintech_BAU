@@ -134,6 +134,13 @@
             }
           }
 
+          &-recaptcha{
+            @include flexbox-display-flex();
+            @include flexbox-flex-wrap(wrap);
+            @include flexbox-justify-content(center);
+            margin-top: 20px;
+          }
+
           &-actions{
             @include flexbox-display-flex();
             @include flexbox-flex-wrap(wrap);

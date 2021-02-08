@@ -164,6 +164,10 @@
         <div class="formbox">
             <form class="formbox-form siteformui" autocomplete="off" novalidate>
                 <div class="formbox-stepbox">
+                    <div class="alert alert-danger" role="alert">
+                        <h4 class="alert-heading">Başvuru Hatası</h4>
+                        <p>Formda Kırmızı Alanları Lütfen Doldurunuz.</p>
+                    </div>
                     <fieldset class="fieldsets">
                         <h3 class="fieldsets-title">Kişisel Bilgiler</h3>
                         <div class="fieldsets-row row">
@@ -322,6 +326,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="fieldsets-recaptcha">
+                            <div class="g-recaptcha" data-theme="light" data-sitekey="6LewOKAUAAAAAMDO2yohWeyDcjFAHfcuEqK2mIp4"></div>
+                        </div>
                         <div class="fieldsets-actions">
                             <button class="btn btn-lg btn-primary btn-submit" type="button">BURS BAŞVURUSU YAP</button>
                         </div>
@@ -447,6 +454,7 @@
 <script src="../assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 <script src="../assets/vendor/bootstrap-datepicker/dist/locales/bootstrap-datepicker.tr.min.js"></script>
 <script src="../assets/dist/js/custom-app.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async=""></script>
 <!-- JavaScript End -->
 
 </body>
