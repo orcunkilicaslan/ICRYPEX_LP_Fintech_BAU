@@ -162,7 +162,7 @@
 
         <!-- Wizard -->
         <div class="formbox">
-            <form class="formbox-form siteformui" action="/" id="formbau" onsubmit="return submitValidForm()" method="post" autocomplete="off" novalidate>
+            <form class="formbox-form siteformui" autocomplete="off" novalidate>
                 <div class="formbox-stepbox">
                     <div class="alert alert-danger" role="alert">
                         <h4 class="alert-heading">Başvuru Hatası</h4>
@@ -170,47 +170,65 @@
                     </div>
                     <fieldset class="fieldsets">
                         <h3 class="fieldsets-title">Kişisel Bilgiler</h3>
-                        <div class="fieldsets-forms">
-                            <div class="form-row">
-                                <div class="form-group col-lg-4">
-                                    <label>Ad:</label>
-                                    <input class="form-control form-control-lg inputrequired" name="firstname" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
+                        <div class="fieldsets-row row">
+                            <div class="fieldsets-forms col">
+                                <div class="form-row">
+                                    <div class="form-group col-lg-6">
+                                        <label>T.C. Kimlik No.:</label>
+                                        <input class="form-control form-control-lg inputrequired" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <label>Uyruk:</label>
+                                        <select class="custom-select custom-select-lg selectrequired">
+                                            <option disabled selected>Seçiniz</option>
+                                            <option value="1">Türkiye Cumhuriyeti</option>
+                                            <option value="2">Diğer</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="form-group col-lg-4">
-                                    <label>Soyad:</label>
-                                    <input class="form-control form-control-lg inputrequired" name="lastname" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
+                                <div class="form-row">
+                                    <div class="form-group col-lg-6">
+                                        <label>Ad:</label>
+                                        <input class="form-control form-control-lg inputrequired" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <label>Soyad:</label>
+                                        <input class="form-control form-control-lg inputrequired" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
+                                    </div>
                                 </div>
-                                <div class="form-group col-lg-4">
-                                    <label>Uyruk:</label>
-                                    <select class="custom-select custom-select-lg selectrequired" name="nationality">
-                                        <option value="-1" disabled selected>Seçiniz</option>
-                                        <option value="1">Türkiye Cumhuriyeti</option>
-                                        <option value="2">Diğer</option>
-                                    </select>
+                                <div class="form-row">
+                                    <div class="form-group col-lg-6">
+                                        <label>Doğum Tarihi:</label>
+                                        <input class="form-control form-control-lg inputrequired birthdate" type="text" placeholder="Lütfen boş alanları doldurun" value="">
+                                        <script>
+                                            $(window).on("load",function(){
+                                                $('.birthdate').datepicker({
+                                                    format: "dd.mm.yyyy",
+                                                    weekStart: 1,
+                                                    language: "tr",
+                                                    orientation: "bottom left",
+                                                    autoclose: true,
+                                                    forceParse: false,
+                                                    todayHighlight: true,
+                                                    toggleActive: true
+                                                }).on("changeDate",function(event){});
+                                            });
+                                        </script>
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <label>E-Posta Adresi:</label>
+                                        <input id="email" class="form-control form-control-lg emailrequired" type="email" placeholder="Lütfen boş alanları doldurun" value="" />
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-row">
-                                <div class="form-group col-lg-4">
-                                    <label>T.C. Kimlik No.:</label>
-                                    <input class="form-control form-control-lg inputrequired" name="identity" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
-                                </div>
-                                <div class="form-group col-lg-4">
-                                    <label>Doğum Tarihi:</label>
-                                    <input class="form-control form-control-lg inputrequired birthdate" name="birthdate" type="text" placeholder="Lütfen boş alanları doldurun" value="">
-                                    <script>
-                                        $(window).on("load",function(){
-                                            $('.birthdate').datepicker({
-                                                format: "dd.mm.yyyy",
-                                                weekStart: 1,
-                                                language: "tr",
-                                                orientation: "bottom left",
-                                                autoclose: true,
-                                                forceParse: false,
-                                                todayHighlight: true,
-                                                toggleActive: true
-                                            }).on("changeDate",function(event){});
-                                        });
-                                    </script>
+                            <div class="useravatar col-auto">
+                                <div id="profilephoto" class="dropzone" name="formavatar">
+                                    <input type="hidden" name="filetype" value="1">
+                                    <div class="dz-message" data-dz-message="">
+                                        <i class="dz-message-icon"></i>
+                                        <span class="dz-message-btxt">Fotoğrafınızı Yükleyiniz</span>
+                                        <span class="dz-message-stxt">[JPG, PNG]<br />Maks 1MB</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -221,45 +239,45 @@
                             <div class="form-row">
                                 <div class="form-group col-lg-4">
                                     <label>İkamet Edilen Ülke:</label>
-                                    <select class="custom-select custom-select-lg selectrequired" name="country">
-                                        <option value="-1" disabled selected>Seçiniz</option>
+                                    <select class="custom-select custom-select-lg selectrequired">
+                                        <option disabled selected>Seçiniz</option>
                                         <option value="1">Türkiye</option>
                                         <option value="2">Diğer</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-lg-4">
                                     <label>İkamet Edilen Şehir:</label>
-                                    <input class="form-control form-control-lg inputrequired" name="city" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
+                                    <input class="form-control form-control-lg inputrequired" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
                                 </div>
                                 <div class="form-group col-lg-4">
                                     <label>İkamet Edilen İlçe:</label>
-                                    <input class="form-control form-control-lg inputrequired" name="district" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
+                                    <input class="form-control form-control-lg inputrequired" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-lg-4">
                                     <label>Ev Telefonu:</label>
-                                    <input class="form-control form-control-lg inputphone2mask" name="localphone" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
+                                    <input class="form-control form-control-lg inputphone2mask" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
                                 </div>
                                 <div class="form-group col-lg-4">
                                     <label>Cep Telefonu:</label>
-                                    <input class="form-control form-control-lg inputphonemask inputrequired" name="mobilephone" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
+                                    <input class="form-control form-control-lg inputphonemask inputrequired" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
                                 </div>
                                 <div class="form-group col-lg-4">
-                                    <label>E-Posta Adresi:</label>
-                                    <input id="email" class="form-control form-control-lg emailrequired" name="email" type="email" placeholder="Lütfen boş alanları doldurun" value="" />
+                                    <label>E-Posta Adres:</label>
+                                    <input class="form-control form-control-lg inputrequired" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col">
                                     <label>Ev Adresi:</label>
-                                    <textarea class="form-control form-control-lg inputrequired" rows="3" name="home_address" placeholder="Lütfen boş alanları doldurun"></textarea>
+                                    <textarea class="form-control form-control-lg inputrequired" rows="3" placeholder="Lütfen boş alanları doldurun"></textarea>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col">
                                     <label>İş Adresi:</label>
-                                    <textarea class="form-control form-control-lg" rows="3" name="work_address" placeholder="Lütfen boş alanları doldurun"></textarea>
+                                    <textarea class="form-control form-control-lg" rows="3" placeholder="Lütfen boş alanları doldurun"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -268,27 +286,43 @@
                         <h3 class="fieldsets-title">Eğitim Bilgileri</h3>
                         <div class="fieldsets-forms">
                             <div class="form-row">
-                                <div class="form-group col-lg-3">
+                                <div class="form-group col-lg-4">
                                     <label>Mezuniyet Derecesi:</label>
-                                    <input class="form-control form-control-lg inputrequired" name="degree" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
+                                    <input class="form-control form-control-lg inputrequired" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
                                 </div>
-                                <div class="form-group col-lg-3">
+                                <div class="form-group col-lg-4">
                                     <label>Mezun Olunan Üniversite:</label>
-                                    <input class="form-control form-control-lg inputrequired" name="university" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
+                                    <input class="form-control form-control-lg inputrequired" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
                                 </div>
-                                <div class="form-group col-lg-3">
+                                <div class="form-group col-lg-4">
                                     <label>Mezun Olunan Bölüm:</label>
-                                    <input class="form-control form-control-lg inputrequired" name="department" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
+                                    <input class="form-control form-control-lg inputrequired" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
                                 </div>
-                                <div class="form-group col-lg-3">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-lg-4">
                                     <label>Mezuniyet Yılı:</label>
-                                    <input class="form-control form-control-lg inputrequired" name="graduation_year" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
+                                    <input class="form-control form-control-lg inputrequired" type="text" placeholder="Lütfen boş alanları doldurun" value="" />
+                                </div>
+                                <div class="form-group col-lg-4">
+                                    <label>Lisans Diploması:</label>
+                                    <div class="custom-file custom-file-lg">
+                                        <input type="file" class="custom-file-input inputrequired">
+                                        <label class="custom-file-label">Dosyanızı Seçiniz</label>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-4">
+                                    <label>Lisans Transkript Belgesi:</label>
+                                    <div class="custom-file custom-file-lg">
+                                        <input type="file" class="custom-file-input inputrequired">
+                                        <label class="custom-file-label">Dosyanızı Seçiniz</label>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col">
                                     <label>FinTech Yüksek Lisans Programı'na Katılım Amacınız:</label>
-                                    <textarea class="form-control form-control-lg inputrequired" rows="3" name="goal" placeholder="Lütfen boş alanları doldurun"></textarea>
+                                    <textarea class="form-control form-control-lg inputrequired" rows="3" placeholder="Lütfen boş alanları doldurun"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -296,214 +330,11 @@
                             <div class="g-recaptcha" data-theme="light" data-sitekey="6LewOKAUAAAAAMDO2yohWeyDcjFAHfcuEqK2mIp4"></div>
                         </div>
                         <div class="fieldsets-actions">
-                            <button class="btn btn-lg btn-primary btn-submit" type="submit">BURS BAŞVURUSU YAP</button>
+                            <button class="btn btn-lg btn-primary btn-submit" type="button">BURS BAŞVURUSU YAP</button>
                         </div>
                     </fieldset>
                 </div>
             </form>
-            <script type="text/javascript">
-
-                function verifyValidFirstName() {
-
-                    if(document.querySelector("input[name=firstname]").value.length < 1){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-
-                }
-
-                function verifyValidLastName() {
-
-                    if(document.querySelector("input[name=lastname]").value.length < 1){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-
-                }
-
-                function verifyValidNationality() {
-
-                    if(document.querySelector("select[name=nationality]").value === "-1"){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-
-                }
-
-                function verifyValidIdentity() {
-
-                    if(document.querySelector("input[name=identity]").value.length < 11){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-
-                }
-
-                function verifyValidBirthDate() {
-
-                    if(document.querySelector("input[name=birthdate]").value.length < 1){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-
-                }
-
-                function verifyValidCountry() {
-
-                    if(document.querySelector("select[name=country]").value === "-1"){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-
-                }
-
-                function verifyValidCity() {
-
-                    if(document.querySelector("input[name=city]").value.length < 1){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-
-                }
-
-                function verifyValidDistrict() {
-
-                    if(document.querySelector("input[name=district]").value.length < 1){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-
-                }
-
-                function verifyValidLocalPhone() {
-
-                    if(document.querySelector("input[name=localphone]").value.length < 1){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-
-                }
-
-                function verifyValidMobilePhone() {
-
-                    if(document.querySelector("input[name=mobilephone]").value.length < 1){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-                }
-
-                function verifyValidEmail() {
-                    var emailPattern	= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-                    if(!document.querySelector("input[name=email]").value.match(emailPattern)){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-                }
-
-                function verifyValidHomeAddress() {
-
-                    if(document.querySelector("textarea[name=home_address]").value.length < 1){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-                }
-
-                function verifyValidWorkAddress() {
-
-                    if(document.querySelector("textarea[name=work_address]").value.length < 1){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-                }
-
-                function verifyValidDegree() {
-
-                    if(document.querySelector("input[name=degree]").value.length < 1){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-                }
-
-                function verifyValidUniversity() {
-
-                    if(document.querySelector("input[name=university]").value.length < 1){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-                }
-
-                function verifyValidDepartment() {
-
-                    if(document.querySelector("input[name=department]").value.length < 1){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-                }
-
-                function verifyValidGraduationYear() {
-
-                    if(document.querySelector("input[name=graduation_year]").value.length < 1){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-                }
-
-                function verifyValidGoal() {
-
-                    if(document.querySelector("textarea[name=goal]").value.length < 1){
-                        return false;
-                    } else {
-                        return true;
-                    }
-                    return true;
-                }
-
-
-                function submitValidForm() {
-                    if (!verifyValidFirstName() || !verifyValidLastName() || !verifyValidNationality() || !verifyValidIdentity() || !verifyValidBirthDate() || !verifyValidCountry() || !verifyValidCity() || !verifyValidDistrict() || !verifyValidMobilePhone() || !verifyValidEmail() || !verifyValidHomeAddress() || !verifyValidDegree() || !verifyValidUniversity() || !verifyValidLastName() || !verifyValidDepartment() || !verifyValidGraduationYear() || !verifyValidGoal()){
-                        console.log("HATA");
-                        return false;
-                    } else {
-                        console.log("DOGRU");
-                    }
-                }
-
-            </script>
         </div>
         <!-- Wizard -->
 
