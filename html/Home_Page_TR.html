@@ -88,7 +88,7 @@
     document.addEventListener('DOMContentLoaded',()=>{
 
         // Set the date we're counting down to
-        var countDownDate = new Date("February 17, 2021 23:59:59").getTime();
+        var countDownDate = new Date("February 14, 2021 23:59:59").getTime();
 
         // Update the count down every 1 second
         var x = setInterval(function() {
@@ -117,8 +117,12 @@
                 clearInterval(x);
                 document.getElementById("countdownArea").style.opacity = "1";
                 document.getElementById("countdownArea").innerHTML = "<p>SÜRESİ DOLDU</p>";
+                document.querySelector(".btn-submit").disabled = true;
+                document.querySelector(".btn-submit").innerHTML = "SÜRESİ DOLDU";
             } else {
                 document.getElementById("countdownArea").style.opacity = "1";
+                document.querySelector(".btn-submit").disabled = false;
+                document.querySelector(".btn-submit").innerHTML = "BURS BAŞVURUSU YAP";
             }
         }, 0);
 

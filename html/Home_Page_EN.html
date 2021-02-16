@@ -116,9 +116,13 @@
             if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("countdownArea").style.opacity = "1";
-                document.getElementById("countdownArea").innerHTML = "<p>SÜRESİ DOLDU</p>";
+                document.getElementById("countdownArea").innerHTML = "<p>EXPIRED</p>";
+                document.querySelector(".btn-submit").disabled = true;
+                document.querySelector(".btn-submit").innerHTML = "EXPIRED";
             } else {
                 document.getElementById("countdownArea").style.opacity = "1";
+                document.querySelector(".btn-submit").disabled = false;
+                document.querySelector(".btn-submit").innerHTML = "APPLY NOW";
             }
         }, 0);
 
